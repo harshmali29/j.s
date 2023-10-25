@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slide-img {
+            width: 75%;
+            display: flex;
+            margin: 0 auto;
+            padding: 20px 0 50px 0;
+        }
+
+        .sec-2 {
+            background-color: black;
+            /* height: 800px; */
+        }
+
+        .sec-1 {
+            background-color: black;
+        }
+
+        .logo {
+            display: flex;
+            width: 10%;
+            padding-top: 10px;
+            /* text-align: center; */
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="sec-1">
+        <img class="logo" src="Marvel_Logo.svg" alt="">
+    </section>
+
+    <section class="sec-2">
+        <img class="slide-img" src="wallpaperbetter.jpg" alt="">
+        <img class="slide-img" src="wallpaperflare.com_wallpaper (1).jpg" alt="">
+        <img class="slide-img" src="wallpaperflare.com_wallpaper (14).jpg" alt="">
+        <img class="slide-img" src="wallpaperflare.com_wallpaper (3).jpg" alt="">
+        <img class="slide-img" src="wallpaperflare.com_wallpaper (6).jpg" alt="">
+        <img class="slide-img" src="wallpaperflare.com_wallpaper (7).jpg" alt="">
+        <img class="slide-img" src="wallpaperflare.com_wallpaper (8).jpg" alt="">
+    </section>
+
+    <script>
+        let sliderdata = document.getElementsByClassName("slide-img")
+        console.log(sliderdata);
+        let count = 0
+
+        function slider() {
+            for (let index = 0; index < sliderdata.length; index++) {
+                console.log(sliderdata[index]);
+                sliderdata[index].style.display = "none"
+            }
+
+            if (count >= sliderdata.length) {
+                count = 0
+            }
+
+            console.log(count);
+            sliderdata[count].style.display = "block"
+            count++
+
+            setTimeout(slider, 1000)
+
+        }
+        slider()
+
+    </script>
+
+</body>
+
+</html>
