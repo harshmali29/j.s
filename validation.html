@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Cookie&family=Grand+Hotel&family=Indie+Flower&family=Montserrat:wght@200;500&family=Nunito:wght@300&family=Oswald&family=PT+Serif&family=Play:wght@700&family=Poppins&family=Prompt:wght@300&family=Raleway:ital,wght@0,100;0,200;0,300;0,500;1,100&family=Sacramento&family=Tilt+Neon&display=swap');
+        /* @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500&family=Cookie&family=Grand+Hotel&family=Indie+Flower&family=Montserrat:wght@200;500&family=Nunito:wght@300&family=Oswald&family=PT+Serif&family=Poppins&family=Prompt:wght@300&family=Raleway:ital,wght@0,100;0,200;0,300;0,500;1,100&family=Sacramento&family=Tilt+Neon&display=swap'); */
+
+        .form-1 {
+            background-image: url(—Pngtree—background\ design\ of\ a\ beautiful_1184870.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 600px;
+            width: 100%;
+            display: flex;
+            /* text-align: center; */
+            /* margin: 0 auto; */
+            justify-content: center;
+        }
+
+        label {
+            font-family: play;
+            padding: 30px;
+            font-size: 50px;
+            font-weight: 600;
+            color: rgb(21, 47, 47);
+        }
+
+        input {
+            padding: 10px 20px;
+            margin: 30px 0;
+            border-radius: 20px;
+            border: solid 1px;
+            /* border: none; */
+        }
+    </style>
+</head>
+
+<body>
+    <form onsubmit="return validation()">
+        <table class="form-1">
+            <tr>
+                <td>
+                    <label for="username">username</label>
+                    <input type="username" id="username" placeholder="username"><br>
+                    <span id="usererror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Password</label>
+                    <input type="password" name="" id="password" placeholder="password"><br>
+                    <span id="passworderror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="number">number</label>
+                    <input type="number" name="" id="number" maxlength="10" placeholder="number"><br>
+                    <span id="numbererror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Email">Email</label>
+                    <input type="Email" name="" id="Email" placeholder="Email"><br>
+                    <span id="Emailerror"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Submit">Submit</label>
+                    <input type="Submit" value="" placeholder="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        let username = document.getElementById("username")
+        let password = document.getElementById("password")
+        let number = document.getElementById("number")
+        let Email = document.getElementById("Email")
+        let usererror = document.getElementById("usererror")
+        let passworderror = document.getElementById("passworderror")
+        let phonenumbererror = document.getElementById("Numbererror")
+        let Emailerror = document.getElementById("Emailerror")
+
+        console.log(username, Password, Email);
+
+        function validation() {
+            var validRegex = "(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+
+            if (username.value === "") {
+                usererror.innerText = "Enter your username"
+                console.log("Enter your username");
+                usererror.style.fontSize = "20px"
+                usererror.style.color = "red"
+                event.preventDefault()
+            }
+            else {
+                usererror.innerText = ""
+                console.log("");
+                event.preventDefault()
+            }
+            if (password.value.length < 8) {
+                passworderror.innerText = "max 8 char."
+                passworderror.style.color = "red"
+                console.log("Enter your password");
+                passworderror.style.fontSize = "20px"
+                event.preventDefault()
+            }
+            else {
+                passworderror.innerText = "Valid password"
+                passworderror.style.color = "green"
+                passworderror.style.fontSize = "20px"
+                event.preventDefault()
+            }
+            if (number.value === "") {
+                numbererror.innerText = "Enter your Number"
+                numbererror.style.fontSize = "20px"
+                numbererror.style.color = "red"
+                console.log("Enter your Number");
+            }
+            else {
+                numbererror.innerText = ""
+                event.preventDefault()
+            }
+
+
+            if (Email.value === "") {
+                Emailerror.innerText = "Enter your Email"
+                Emailerror.style.color = "red"
+                Emailerror.style.fontSize = "20px"
+                console.log("Enter your Email");
+                event.preventDefault()
+            }
+            else {
+                Emailerror.innerText = ""
+                event.preventDefault()
+            }
+
+
+
+
+
+
+            console.log(username.value);
+            console.log(password.value);
+            console.log(number.value);
+            return false
+
+
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
